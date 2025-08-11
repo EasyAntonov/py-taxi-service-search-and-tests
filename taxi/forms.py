@@ -50,3 +50,33 @@ def validate_license_number(
         raise ValidationError("Last 5 characters should be digits")
 
     return license_number
+
+
+class DriverSearchForm(forms.ModelForm):
+    class Meta:
+        username = forms.CharField(
+            max_length=256,
+            required=False,
+            label="",
+            widget=forms.TextInput(attrs={"placeholder": "Search by username"}),
+        )
+
+
+class CarSearchForm(forms.ModelForm):
+    class Meta:
+        username = forms.CharField(
+            max_length=256,
+            required=False,
+            label="",
+            widget=forms.TextInput(attrs={"placeholder": "Search by model"}),
+        )
+
+
+class ManufacturerSearchForm(forms.ModelForm):
+    class Meta:
+        username = forms.CharField(
+            max_length=256,
+            required=False,
+            label="",
+            widget=forms.TextInput(attrs={"placeholder": "Search by name"}),
+        )
